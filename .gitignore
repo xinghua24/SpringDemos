@@ -1,0 +1,16 @@
+.project
+.classpath
+.settings/
+
+*~
+
+# java files to ignore
+*.class
+*.jar
+*.war
+*.ear
+
+.gradle/
+build/
+gradle/
+bin/
