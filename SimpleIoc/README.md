@@ -21,7 +21,7 @@ In this project, we use setter injection. A bean of type userView is defined in 
 	</bean>
 ```
 
-result from running the project:
+result from running the project:  
 Hi I am User B
 
 Reference

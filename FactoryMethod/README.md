@@ -9,5 +9,5 @@ Inject bean using factory method.
 </beans>
 ```
 Result
-calling Foo.getInstance()
+calling Foo.getInstance() 
 This is Foo!
