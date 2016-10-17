@@ -3,11 +3,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="serviceA" class="com.xinghua24.AUserService"></bean>
+	<bean id="foo" class="com.xinghua24.Foo"  factory-method="getInstance" />
 	
-	<bean id="serviceB" class="com.xinghua24.BUserService"></bean>
-	
-	<bean id="userView" class="com.xinghua24.UserView">
-		<constructor-arg ref="serviceA" type="com.xinghua24.UserService"/>
-	</bean>
+	<bean id="objectFactory" class="com.xinghua24.ObjectFactory" />
+	<bean id="bar" class="com.xinghua24.Bar" factory-bean="objectFactory" factory-method="getBar" />
 </beans>

@@ -1,8 +1,22 @@
 ext {
     springVersion="4.3.3.RELEASE"
+    
 }
 
 dependencies {
     compile "org.springframework:spring-core:$springVersion"
     compile "org.springframework:spring-context:$springVersion"
 }
+
+apply plugin: 'application'
+mainClassName="com.xinghua24.App"
+/**
+jar {
+  manifest {
+    attributes(
+        	'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+        	'Main-Class': 'com.xinghua24.App'
+    	}
+    }
+}
+*/

@@ -9,10 +9,20 @@ This project uses XML-based configuration approach.
 
 ClassPathXmlApplicationContext Class is a subclass of ApplicationContext. it uses an XML file to configure Spring Container.
 
-In this project, a bean of type User is defined in configuration file ApplicationContext.xml. App.java get the bean instance from the container and calls the User bean's sayHello method.
+In this project, we use setter injection. A bean of type userView is defined in configuration file ApplicationContext.xml. App.java get the bean instance from the container and calls the userView bean's displayUser method.
+
+```xml
+	<bean id="serviceA" class="com.xinghua24.AUserService"></bean>
+	
+	<bean id="serviceB" class="com.xinghua24.BUserService"></bean>
+	
+	<bean id="userView" class="com.xinghua24.UserView">
+		<property name="userService" ref="serviceB" />
+	</bean>
+```
 
 result from running the project:
-Hello from: John Doe
+Hi I am User B
 
 Reference
 [http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#beans](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#beans)
