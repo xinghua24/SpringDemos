@@ -1,4 +1,4 @@
 include 'SimpleIoc', 'ComponentScan', 'ConstructorInjection', 'FactoryMethod', 'Scope', 'Autowiring', 
-'UsingAnnotation', 'AutowiredAnnotation', 'QualifierAnnotation'
+'UsingAnnotation', 'AutowiredAnnotation', 'QualifierAnnotation', 'ScopeAnnotation'
 
 rootProject.name = 'SpringDemos'

@@ -8,11 +8,11 @@ Ioc
 - [Autowiring](Autowiring)
 
 Annotation
-- [UsingAnnotation](UsingAnnotation)
-- [AutowiredAnnotation](AutowiredAnnotation)
-- [ComponentScan](ComponentScan)
-- [QualifierAnnotation](QualifierAnnotation)
-
+- [UsingAnnotation](UsingAnnotation) - Enable Annotation
+- [AutowiredAnnotation](AutowiredAnnotation) - @Autowired
+- [ComponentScan](ComponentScan) - Enable Component scan, @Component
+- [QualifierAnnotation](QualifierAnnotation) - @Qualifier
+- [ScopeAnnotation](ScopeAnnotation) - @Scope
 
 Resources
 - [Spring Framework Reference Documentation](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/)
