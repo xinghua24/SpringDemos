@@ -1,3 +1,5 @@
+Annotation Configuration is used a lot more than XML based configuration. However, Annotation configuration is not going to replace XML based configuration. Annotation has its own limits. Annotation cannot be applied to classes that you have no access to the source code. 
+
 To enable Annotation, add the following element to xml config file
 
 ```xml
