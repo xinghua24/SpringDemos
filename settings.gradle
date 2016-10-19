@@ -1,5 +1,5 @@
 include 'SimpleIoc', 'ComponentScan', 'ConstructorInjection', 'FactoryMethod', 'Scope', 'Autowiring', 
 'UsingAnnotation', 'AutowiredAnnotation', 'QualifierAnnotation', 'ScopeAnnotation', 'JavaBasedConfig',
-'ComponentScanAnnotation'
+'ComponentScanAnnotation', 'JavaImportXMLConfig', 'XMLImportJavaConfig'
 
 rootProject.name = 'SpringDemos'

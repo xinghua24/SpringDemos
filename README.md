@@ -8,7 +8,7 @@ Ioc with XML
 - [Autowiring](Autowiring)
 
 Annotation
-- [UsingAnnotation](UsingAnnotation) - Enable Annotation
+- [UsingAnnotation](UsingAnnotation) - Enable Annotation using &lt;annotation-config&gt; element
 - [AutowiredAnnotation](AutowiredAnnotation) - @Autowired
 - [ComponentScan](ComponentScan) - Enable Component scan, @Component
 - [QualifierAnnotation](QualifierAnnotation) - @Qualifier
@@ -17,6 +17,8 @@ Annotation
 Java Based Configuration
 - [JavaBasedConfig](JavaBasedConfig) - @Configuration, @Bean
 - [ComponentScanAnnotation](ComponentScanAnnotation) - @ComponentScan
+- [JavaImportXMLConfig](JavaImportXMLConfig) - use @ImportXMLConfig to import XML Config
+- [XMLImportJavaConfig](XMLImportJavaConfig) - import Java Config file
 
 Resources
 - [Spring Framework Reference Documentation](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/)
