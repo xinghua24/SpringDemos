@@ -1,7 +1,8 @@
 .project
 .classpath
 .settings/
-
+.metadata/
+Servers/
 *~
 
 # java files to ignore
