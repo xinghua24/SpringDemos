@@ -1,10 +1,10 @@
 **Project List**
 
 Ioc with XML
-- [SimpleIoc](SimpleIoc)
+- [SimpleIoc](SimpleIoc) - Intro to Ioc Container and Bean
 - [ConstructorInjection](ConstructorInjection)
-- [FactoryMetho](FactoryMetho)
-- [Scope](Scope)
+- [FactoryMethod](FactoryMethod)
+- [Scope](Scope) - Bean Scope(Singleton and Prototype)
 - [Autowiring](Autowiring)
 
 Annotation
@@ -20,6 +20,9 @@ Java Based Configuration
 - [JavaImportXMLConfig](JavaImportXMLConfig) - use @ImportXMLConfig to import XML Config
 - [XMLImportJavaConfig](XMLImportJavaConfig) - import Java Config file
 
+Topics
+- [Resource](Resource) - loading resource using Spring
+- [ResourceLoader](ResourceLoader) - use ResourceLoader to load the resource
 Resources
 - [Spring Framework Reference Documentation](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/)
 - [Spring Framework API](http://docs.spring.io/spring/docs/current/javadoc-api/)
