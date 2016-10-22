@@ -18,8 +18,9 @@ Annotation
 Java Based Configuration
 - [JavaBasedConfig](JavaBasedConfig) - @Configuration, @Bean
 - [ComponentScanAnnotation](ComponentScanAnnotation) - @ComponentScan
-- [JavaImportXMLConfig](JavaImportXMLConfig) - use @ImportXMLConfig to import XML Config
-- [XMLImportJavaConfig](XMLImportJavaConfig) - import Java Config file
+- [JavaImportXMLConfig](JavaImportXMLConfig) - use @ImportXMLConfig to import XML config file
+- [JavaImportJavaConfig](JavaImportJavaConfig) - use @Import to import Java Config file
+- [XMLImportJavaConfig](XMLImportJavaConfig) - import Java Config file in XML config file
 
 Topics
 - [Resource](Resource) - loading resource using Spring
