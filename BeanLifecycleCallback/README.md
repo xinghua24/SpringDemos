@@ -22,3 +22,5 @@ public class Bar {
     }
 }
 ```
+
+You can also implement init and destroy method when doing java based configuration. Just provide initMethod and destroyMethod attribute to @Bean annotation.
