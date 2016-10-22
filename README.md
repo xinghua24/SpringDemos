@@ -6,6 +6,7 @@ Ioc with XML
 - [FactoryMethod](FactoryMethod)
 - [Scope](Scope) - Bean Scope(Singleton and Prototype)
 - [Autowiring](Autowiring)
+- [XMLImportXMLConfig](XMLImportXMLConfig) - use &lt;import&gt; to import XML config file
 
 Annotation
 - [UsingAnnotation](UsingAnnotation) - Enable Annotation using &lt;annotation-config&gt; element
@@ -24,6 +25,7 @@ Topics
 - [Resource](Resource) - loading resource using Spring
 - [ResourceLoader](ResourceLoader) - use ResourceLoader to load the resource
 - [PropertyPlaceholderConfigurer](PropertyPlaceholderConfigurer) - accessing properties config file
+
 
 Resources
 - [Spring Framework Reference Documentation](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/)
