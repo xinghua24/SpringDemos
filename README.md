@@ -25,8 +25,8 @@
 - [BeanLifecycleCallback](BeanLifecycleCallback) - @PostConstruct and @PreDestroy
 
 ### Data Access
-- [JdbcMysqlDataSource](JdbcMysqlDataSource) - creating MySQL DataSource
-- [JdbcEmbeddedDataSource](JdbcEmbeddedDataSource) - creating Embedded DataSource
+- [MysqlDataSource](MysqlDataSource) - creating MySQL DataSource
+- [EmbeddedDataSource](EmbeddedDataSource) - creating Embedded DataSource
 
 ### Topics
 - [Resource](Resource) - loading resource using Spring
