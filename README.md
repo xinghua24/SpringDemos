@@ -1,6 +1,6 @@
-**Project List**
+## Project List
 
-Ioc with XML
+### Ioc with XML
 - [SimpleIoc](SimpleIoc) - Intro to Ioc Container and Bean
 - [ConstructorInjection](ConstructorInjection)
 - [FactoryMethod](FactoryMethod)
@@ -8,7 +8,7 @@ Ioc with XML
 - [Autowiring](Autowiring)
 - [XMLImportXMLConfig](XMLImportXMLConfig) - use &lt;import&gt; to import XML config file
 
-Annotation
+### Annotation
 - [UsingAnnotation](UsingAnnotation) - Enable Annotation using &lt;annotation-config&gt; element
 - [AutowiredAnnotation](AutowiredAnnotation) - @Autowired
 - [ComponentScan](ComponentScan) - Enable Component scan, @Component
@@ -16,7 +16,7 @@ Annotation
 - [ScopeAnnotation](ScopeAnnotation) - @Scope
 
 
-Java Based Configuration
+### Java Based Configuration
 - [JavaBasedConfig](JavaBasedConfig) - @Configuration, @Bean
 - [ComponentScanAnnotation](ComponentScanAnnotation) - @ComponentScan
 - [JavaImportXMLConfig](JavaImportXMLConfig) - use @ImportXMLConfig to import XML config file
@@ -24,12 +24,17 @@ Java Based Configuration
 - [XMLImportJavaConfig](XMLImportJavaConfig) - import Java Config file in XML config file
 - [BeanLifecycleCallback](BeanLifecycleCallback) - @PostConstruct and @PreDestroy
 
-Topics
+### Data Access
+- [JdbcMysqlDataSource](JdbcMysqlDataSource) - creating MySQL DataSource
+- [JdbcEmbeddedDataSource](JdbcEmbeddedDataSource) - creating Embedded DataSource
+
+### Topics
 - [Resource](Resource) - loading resource using Spring
 - [ResourceLoader](ResourceLoader) - use ResourceLoader to load the resource
 - [PropertyPlaceholderConfigurer](PropertyPlaceholderConfigurer) - accessing properties config file
+- [ProfileAnnotation](ProfileAnnotation) - @Profile
 
-Resources
+##Resources
 - [Spring Framework Reference Documentation](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/)
 - [Spring Framework API](http://docs.spring.io/spring/docs/current/javadoc-api/)
 - [Mkyong Spring Core Tutorial](https://www.mkyong.com/tutorials/spring-tutorials/)

@@ -2,6 +2,27 @@ Most projects have different environments like Dev, Test, Production. These prof
 
 Starting from Spring 4.0, @Profile can be apply at the class level or method level.
 
+use of @Profile at the method level
+
+```java
+@Configuration
+public class ApplicationConfig {
+
+    @Bean(name="endpoint" )
+    @Profile("dev")
+    public Endpoint getDevEndpoint(){
+        return new Endpoint("http://dev-endpoint-url.com");
+    }
+    
+    @Bean(name="endpoint")
+    @Profile("test")
+    public Endpoint getTestEndpoint(){
+        return new Endpoint("http://test-endpoint-url.com");
+    }
+    //......
+}
+
+
 One way to activate a profile is to provide a JVM argument.
 
 ```

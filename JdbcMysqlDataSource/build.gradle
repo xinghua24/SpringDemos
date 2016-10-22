@@ -1,0 +1,13 @@
+ext {
+    springVersion="4.3.3.RELEASE"
+}
+
+dependencies {
+    compile "org.springframework:spring-core:$springVersion"
+    compile "org.springframework:spring-context:$springVersion"
+    
+	compile group: 'org.springframework', name: 'spring-jdbc', version: project.ext.springVersion
+    
+	compile group: 'mysql', name: 'mysql-connector-java', version: '6.0.2'
+
+}
