@@ -27,6 +27,7 @@
 ### Data Access
 - [MysqlDataSource](MysqlDataSource) - creating MySQL DataSource
 - [EmbeddedDataSource](EmbeddedDataSource) - creating Embedded DataSource
+- [JdbcTemplate](JdbcTemplate) - use JdbcTemplate to simplify data access code
 
 ### Topics
 - [Resource](Resource) - loading resource using Spring
@@ -41,3 +42,4 @@
 - [http://www.journaldev.com/2888/spring-tutorial-spring-core-tutorial](http://www.journaldev.com/2888/spring-tutorial-spring-core-tutorial)
 - [Tutorialspoint Spring Tutorial](https://www.tutorialspoint.com/spring/index.htm)
 - [http://javapapers.com/category/spring/](http://javapapers.com/category/spring/)
+- [http://www.javatpoint.com/spring-tutorial](http://www.javatpoint.com/spring-tutorial)

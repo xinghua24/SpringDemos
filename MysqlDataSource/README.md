@@ -17,7 +17,7 @@ jdbc.password=password
 ```
 
 create dataSource bean. The proeprties of the dataSource bean are set from database.properties file
-```
+```xml
     <context:property-placeholder location="classpath:database.properties"/>
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">

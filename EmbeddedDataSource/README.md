@@ -12,7 +12,7 @@ dependencies {
 ```
 
 create embedded database instance in XML config file. The embedded database will be created by schema.sql and data.sql
-```
+```xml
 	<jdbc:embedded-database id="dataSource" type="H2">
 		<jdbc:script location="classpath:schema.sql" />
 		<jdbc:script location="classpath:data.sql" />
