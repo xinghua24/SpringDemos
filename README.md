@@ -38,6 +38,7 @@
 ##Resources
 - [Spring Framework Reference Documentation](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/)
 - [Spring Framework API](http://docs.spring.io/spring/docs/current/javadoc-api/)
+- [Learning Spring Programming by Kevin Bowersox](https://www.safaribooksonline.com/library/view/learning-spring-programming/9781771372879/)
 - [Mkyong Spring Core Tutorial](https://www.mkyong.com/tutorials/spring-tutorials/)
 - [http://www.journaldev.com/2888/spring-tutorial-spring-core-tutorial](http://www.journaldev.com/2888/spring-tutorial-spring-core-tutorial)
 - [Tutorialspoint Spring Tutorial](https://www.tutorialspoint.com/spring/index.htm)
