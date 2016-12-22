@@ -1,0 +1,12 @@
+ext {
+    springVersion="4.3.3.RELEASE"
+}
+
+dependencies {
+    compile "org.springframework:spring-core:$springVersion"
+    compile "org.springframework:spring-context:$springVersion"
+    compile group: 'com.h2database', name: 'h2', version: '1.4.188'
+	compile group: 'org.springframework', name: 'spring-jdbc', version: project.ext.springVersion
+	compile group: 'org.hibernate', name: 'hibernate-core', version: '4.3.11.Final'
+	compile group: 'org.springframework', name: 'spring-orm', version: project.ext.springVersion
+}
