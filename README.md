@@ -29,6 +29,7 @@
 - [EmbeddedDataSource](EmbeddedDataSource) - creating Embedded DataSource
 - [JdbcTemplate](JdbcTemplate) - use JdbcTemplate to simplify data access code
 - [Hibernate4Integration](Hibernate4Integration) - Spring Hibernate4 integration
+
 ### Topics
 - [Resource](Resource) - loading resource using Spring
 - [ResourceLoader](ResourceLoader) - use ResourceLoader to load the resource
