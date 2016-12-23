@@ -34,7 +34,8 @@
 ### Topics
 - [Resource](Resource) - loading resource using Spring
 - [ResourceLoader](ResourceLoader) - use ResourceLoader to load the resource
-- [PropertyPlaceholderConfigurer](PropertyPlaceholderConfigurer) - accessing properties config file
+- [PropertyPlaceholderConfigurer](PropertyPlaceholderConfigurer) - to get configuration from properties file, XML style.
+- [PropertySource](PropertySource) - use @PropertySource to get configuration from properties file.
 - [ProfileAnnotation](ProfileAnnotation) - @Profile
 
 ##Resources

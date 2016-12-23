@@ -7,6 +7,6 @@ include 'JavaBasedConfig','ComponentScanAnnotation','JavaImportXMLConfig','JavaI
 
 include 'MysqlDataSource', 'EmbeddedDataSource', 'EmbeddedDataSourceJavaConfig', 'JdbcTemplate','Hibernate4Integration'
 
-include 'Resource', 'ResourceLoader', 'PropertyPlaceholderConfigurer', 'ProfileAnnotation'
+include 'Resource', 'ResourceLoader', 'PropertyPlaceholderConfigurer', 'PropertySource', 'ProfileAnnotation'
 
 rootProject.name = 'SpringDemos'
