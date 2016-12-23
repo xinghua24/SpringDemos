@@ -15,4 +15,4 @@ EmbeddedDatabase class can be build using a fluent API provided by EmbeddedDatab
 	}
 ```
 Reference
-* [Spring docs - Embedded database support section](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#jdbc-embedded-database-support)
+* [Spring Reference Documentation - Embedded database support section](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#jdbc-embedded-database-support)
