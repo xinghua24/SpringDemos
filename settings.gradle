@@ -1,7 +1,12 @@
-include 'SimpleIoc', 'ComponentScan', 'ConstructorInjection', 'FactoryMethod', 'Scope', 'Autowiring', 
-'UsingAnnotation', 'AutowiredAnnotation', 'QualifierAnnotation', 'ScopeAnnotation', 'JavaBasedConfig',
-'ComponentScanAnnotation', 'JavaImportXMLConfig', 'XMLImportJavaConfig', 'Resource', 'ResourceLoader',
-'PropertyPlaceholderConfigurer', 'XMLImportXMLConfig', 'JavaImportJavaConfig', 'BeanLifecycleCallback',
-'ProfileAnnotation', 'MysqlDataSource', 'EmbeddedDataSource', 'JdbcTemplate','Hibernate4Integration'
+include 'SimpleIoc', 'ConstructorInjection', 'FactoryMethod', 'Scope', 'Autowiring', 'XMLImportXMLConfig'
+
+include 'UsingAnnotation', 'ComponentScan', 'AutowiredAnnotation', 'QualifierAnnotation', 'ScopeAnnotation'
+
+include 'JavaBasedConfig','ComponentScanAnnotation','JavaImportXMLConfig','JavaImportJavaConfig',
+'XMLImportJavaConfig','BeanLifecycleCallback'
+
+include 'MysqlDataSource', 'EmbeddedDataSource', 'EmbeddedDataSourceJavaConfig', 'JdbcTemplate','Hibernate4Integration'
+
+include 'Resource', 'ResourceLoader', 'PropertyPlaceholderConfigurer', 'ProfileAnnotation'
 
 rootProject.name = 'SpringDemos'

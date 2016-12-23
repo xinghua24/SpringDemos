@@ -9,10 +9,20 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import com.xinghua24.entity.User;
 
+@Component
 public class UserDao {
+	
     private DataSource dataSource;
+    
+    @Autowired
+    public UserDao(DataSource dataSource){
+    	this.dataSource = dataSource;
+    }
 
     public List<User> query() {
         List<User> users = new ArrayList<>();
@@ -45,13 +55,5 @@ public class UserDao {
         }
 
         return users;
-    }
-
-    public DataSource getDataSource() {
-        return dataSource;
-    }
-
-    public void setDataSource(DataSource dataSource) {
-        this.dataSource = dataSource;
     }
 }
