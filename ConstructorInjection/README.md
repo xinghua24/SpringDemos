@@ -12,4 +12,4 @@ To use constructor argument to construct a bean, you need to provide additional 
 ```
 
 Reference
-- [http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#beans-factory-ctor-arguments-resolution](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#beans-factory-ctor-arguments-resolution)
+* [Spring Reference Documentation - Embedded database support section](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#jdbc-embedded-database-support)

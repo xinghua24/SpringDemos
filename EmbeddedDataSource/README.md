@@ -19,4 +19,4 @@ create embedded database instance in XML config file. The embedded database will
 	</jdbc:embedded-database>
 ```	
 Reference
-* [Spring docs - Embedded database support section](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#jdbc-embedded-database-support)
+* [Spring Reference Documentation - Embedded database support section](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#jdbc-embedded-database-support)

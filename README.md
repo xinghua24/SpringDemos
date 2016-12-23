@@ -27,6 +27,7 @@
 ### Data Access
 - [MysqlDataSource](MysqlDataSource) - creating MySQL DataSource
 - [EmbeddedDataSource](EmbeddedDataSource) - creating Embedded DataSource
+- [EmbeddedDataSourceJavaConfig](EmbeddedDataSourceJavaConfig) - creating Embedded DataSource programmatically
 - [JdbcTemplate](JdbcTemplate) - use JdbcTemplate to simplify data access code
 - [Hibernate4Integration](Hibernate4Integration) - Spring Hibernate4 integration
 
