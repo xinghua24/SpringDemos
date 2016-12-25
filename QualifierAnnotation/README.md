@@ -1,4 +1,4 @@
-@Autowired and @Qualifier are often used together to remove confusion about which bean is used for wiring.
+@Autowired and @Qualifier are often used together to remove confusion about which bean is used for wiring. By default, @Autowired inject beans by Type, not by name.
 
 If there are two beans of the same type, then autowiring cannot determine which bean to use. In this situation, @Qualifier can be used to distinguish them.
 
