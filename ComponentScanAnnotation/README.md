@@ -7,3 +7,5 @@ public class ApplicationConfig {
 
 }
 ```
+
+NOTE: @ComponentScan will scan the current package and its SUB packages!

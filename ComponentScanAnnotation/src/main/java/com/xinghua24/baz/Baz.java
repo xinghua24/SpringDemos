@@ -1,4 +1,4 @@
-package com.xinghua24;
+package com.xinghua24.baz;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
