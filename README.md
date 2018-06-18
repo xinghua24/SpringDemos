@@ -18,6 +18,7 @@
 
 ### Java Based Configuration
 - [JavaBasedConfig](JavaBasedConfig) - @Configuration, @Bean
+- [DependsOn](DependsOn) - DependsOn Annotation
 - [ComponentScanAnnotation](ComponentScanAnnotation) - @ComponentScan
 - [JavaImportXMLConfig](JavaImportXMLConfig) - use @ImportXMLConfig to import XML config file
 - [JavaImportJavaConfig](JavaImportJavaConfig) - use @Import to import Java Config file
