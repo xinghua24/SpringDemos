@@ -29,3 +29,7 @@ entering foo()
 exiting foo()
 Foo [bar=Bar [msg=Hello Spring]]
 ```
+
+
+Reference
+* [Baeldung DependsOn Annotation](http://www.baeldung.com/spring-depends-on)

@@ -39,7 +39,7 @@
 - [PropertySource](PropertySource) - use @PropertySource to get configuration from properties file.
 - [ProfileAnnotation](ProfileAnnotation) - @Profile
 
-##Resources
+## Resources
 - [Spring Framework Reference Documentation](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/)
 - [Spring Framework API](http://docs.spring.io/spring/docs/current/javadoc-api/)
 - [Learning Spring Programming by Kevin Bowersox](https://www.safaribooksonline.com/library/view/learning-spring-programming/9781771372879/)
