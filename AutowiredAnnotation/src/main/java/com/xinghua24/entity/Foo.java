@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class Foo {
     private Bar bar;
     
-    @Autowired
+//    @Autowired - omit using Implicit Constructor Injection
     public Foo(Bar bar){
         this.bar = bar;
     }
