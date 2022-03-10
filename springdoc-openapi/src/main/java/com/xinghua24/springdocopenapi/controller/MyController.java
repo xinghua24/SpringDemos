@@ -1,6 +1,6 @@
 package com.xinghua24.springdocopenapi.controller;
 
-import com.xinghua24.springdocopenapi.Greeting;
+import com.xinghua24.springdocopenapi.entity.Greeting;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
