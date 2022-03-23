@@ -40,6 +40,8 @@
 - [ProfileAnnotation](ProfileAnnotation) - @Profile
 - [springdoc-openapi](springdoc-openapi) - generate OpenAPI documentation using Springdoc
 - [cron](cron) - scheduling tasks using @Schedued annotation
+- [liquibase](liquibase-demo) - Database migration with Liquibase
+
 ## Resources
 - [Spring Framework Reference Documentation](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/)
 - [Spring Framework API](http://docs.spring.io/spring/docs/current/javadoc-api/)
