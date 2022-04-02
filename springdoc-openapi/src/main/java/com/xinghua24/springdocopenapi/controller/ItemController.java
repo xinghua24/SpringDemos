@@ -2,6 +2,11 @@ package com.xinghua24.springdocopenapi.controller;
 
 import com.xinghua24.springdocopenapi.entity.Item;
 import com.xinghua24.springdocopenapi.repository.ItemRepository;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -19,15 +24,18 @@ public class ItemController {
 
     // GET with path parameter
     // GET localhost:8080/items/{itemId}
+    @Operation(summary = "Get item", responses = {
+            @ApiResponse(description = "Successful Operation", responseCode = "200", content = @Content(mediaType = "application/json", schema = @Schema(implementation = Item.class))),
+            @ApiResponse(responseCode = "404", description = "Not found", content = @Content) })
     @RequestMapping(value = "/{itemId}",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Item> getItem(@PathVariable(value = "itemId") long itemId) {
+    public ResponseEntity<Item> getItem(@Parameter(description = "Item Id") @PathVariable(value = "itemId") long itemId) {
         Optional<Item> item = itemRepository.findById(itemId);
         if( item.isPresent()) {
                 return ResponseEntity.status(HttpStatus.OK).body(item.get());
         }
-        return ResponseEntity.badRequest().build();
+        return ResponseEntity.notFound().build();
     }
 
     // GET with path parameter
