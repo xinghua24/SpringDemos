@@ -41,6 +41,7 @@
 - [springdoc-openapi](springdoc-openapi) - generate OpenAPI documentation using Springdoc
 - [cron](cron) - scheduling tasks using @Schedued annotation
 - [liquibase](liquibase-demo) - Database migration with Liquibase
+- [flyway](flyway-demo) - Database migration with Flyway
 
 ## Resources
 - [Spring Framework Reference Documentation](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/)
