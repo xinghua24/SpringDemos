@@ -24,7 +24,6 @@
 - [JavaImportJavaConfig](JavaImportJavaConfig) - use @Import to import Java Config file
 - [XMLImportJavaConfig](XMLImportJavaConfig) - import Java Config file in XML config file
 - [BeanLifecycleCallback](BeanLifecycleCallback) - @PostConstruct and @PreDestroy
-- [Spring Data Rest](data-rest) - Use Spring Data REST to build REST API
 
 ### Data Access
 - [MysqlDataSource](MysqlDataSource) - creating MySQL DataSource
@@ -39,6 +38,7 @@
 - [PropertyPlaceholderConfigurer](PropertyPlaceholderConfigurer) - to get configuration from properties file, XML style.
 - [PropertySource](PropertySource) - use @PropertySource to get configuration from properties file.
 - [ProfileAnnotation](ProfileAnnotation) - @Profile
+- [Spring Data Rest](data-rest) - Use Spring Data REST to build REST API
 - [springdoc-openapi](springdoc-openapi) - generate OpenAPI documentation using Springdoc
 - [cron](cron) - scheduling tasks using @Schedued annotation
 - [liquibase](liquibase-demo) - Database migration with Liquibase
