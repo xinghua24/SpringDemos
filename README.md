@@ -43,6 +43,7 @@
 - [cron](cron) - scheduling tasks using @Schedued annotation
 - [liquibase](liquibase-demo) - Database migration with Liquibase
 - [flyway](flyway-demo) - Database migration with Flyway
+- [SpringBootAngular](SpringBootAngular) - SpringBoot project with Angular frontend
 
 ## Resources
 - [Spring Framework Reference Documentation](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/)
