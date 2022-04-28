@@ -15,6 +15,12 @@ Spring Data Rest Hal Explorer allows users to browse Spring Data REST repositori
 </dependency>
 ```
 
+
+By default, Spring Data REST serves up REST resources at the root URI, '/'. You can change the path in application.properties file. You likely want to change it to '/api'.
+```
+spring.data.rest.basePath=/api
+```
+
 ## Repository
 By default, all public Spring Data repositories are used to expose HTTP resources as described in [Repository resources](https://docs.spring.io/spring-data/rest/docs/current/reference/html/#repository-resources).
 
