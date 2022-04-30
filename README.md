@@ -45,7 +45,7 @@
 - [flyway](flyway-demo) - Database migration with Flyway
 - [Serving Static Resources](ServingStaticResources)
 - [SpringBootAngular](SpringBootAngular) - SpringBoot project with Angular frontend
-
+- [websocket-basics](websocket-basics) - SpringBoot Websocket example
 ## Resources
 - [Spring Framework Reference Documentation](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/)
 - [Spring Framework API](http://docs.spring.io/spring/docs/current/javadoc-api/)
