@@ -33,6 +33,7 @@
 - [Hibernate4Integration](Hibernate4Integration) - Spring Hibernate4 integration
 
 ### Topics
+- [sample-app](sample-app) - sample Spring Boot web app
 - [Resource](Resource) - loading resource using Spring
 - [ResourceLoader](ResourceLoader) - use ResourceLoader to load the resource
 - [PropertyPlaceholderConfigurer](PropertyPlaceholderConfigurer) - to get configuration from properties file, XML style.
