@@ -14,10 +14,9 @@ public class WebSocketBroadcastController {
     }
 
     @MessageMapping("/broadcast") // map messages headed for the /broadcast
-    @SendTo("/topic/messages") // return message send to /topic/broadcast destination
+    @SendTo("/topic/messages") // return message will be sent to /topic/broadcast destination
     public ChatMessage send(ChatMessage chatMessage) throws Exception {
         System.out.println("send method");
         return new ChatMessage(chatMessage.getFrom(), chatMessage.getText(), "ALL");
     }
-
 }
