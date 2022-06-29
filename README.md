@@ -48,6 +48,7 @@
 - [SpringBootAngular](SpringBootAngular) - SpringBoot project with Angular frontend
 - [websocket-basics](websocket-basics) - SpringBoot Websocket example
 - [stomp-websocket](stomp-websocket)
+- [webflux](webflux)
 
 ## Resources
 - [Spring Framework Reference Documentation](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/)
