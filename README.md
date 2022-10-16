@@ -34,6 +34,7 @@
 
 ### Topics
 - [sample-app](sample-app) - sample Spring Boot web app
+- [CollectionInjection](CollectionInjection) - Inject List/Set of bean as dependency
 - [Resource](Resource) - loading resource using Spring
 - [ResourceLoader](ResourceLoader) - use ResourceLoader to load the resource
 - [PropertyPlaceholderConfigurer](PropertyPlaceholderConfigurer) - to get configuration from properties file, XML style.
