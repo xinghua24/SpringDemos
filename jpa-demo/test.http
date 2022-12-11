@@ -1,0 +1,13 @@
+GET http://localhost:8080/items
+
+###
+
+POST http://localhost:8080/items
+content-type: application/json
+
+{
+    "name": "headphone",
+    "price" : 99.0
+}
+
+
