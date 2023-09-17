@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.reactive.function.client.WebClient;
-import reactor.core.publisher.Mono;
+import org.springframework.web.reactive.function.client.WebClientException;
 
 import java.util.List;
 
@@ -22,10 +22,12 @@ public class DemoApplication {
 	public CommandLineRunner run() {
 		return (args) -> {
 			webClientGet();
+			webClientGetMono();
 			webClientGetList();
 			webClientPost();
 			webClientPut();
 			webClientDelete();
+			webClient_HandleException();
 		};
 	}
 
@@ -41,6 +43,19 @@ public class DemoApplication {
 				.block();
 		System.out.println(response.getStatusCode().value());
 		System.out.println(response.getBody());
+	}
+
+	private static void webClientGetMono() {
+		WebClient webClient = WebClient.builder()
+				.build();
+		Todo todo = webClient
+				.get()
+				.uri("https://jsonplaceholder.typicode.com/todos/2")
+				.accept(MediaType.APPLICATION_JSON)
+				.retrieve()
+				.bodyToMono(Todo.class)
+				.block();
+		System.out.println(todo);
 	}
 
 	private static void webClientGetList() {
@@ -105,5 +120,25 @@ public class DemoApplication {
 				.toEntity(Void.class)
 				.block();
 		System.out.println(response.getStatusCode().value());
+	}
+
+	private static void webClient_HandleException() {
+		WebClient webClient = WebClient.builder()
+				.build();
+		try {
+			ResponseEntity<Todo> response = webClient
+					.get()
+					.uri("https://jsonplaceholder.typicode.com/error")
+					.accept(MediaType.APPLICATION_JSON)
+					.retrieve()
+					.toEntity(Todo.class)
+					.block();
+			System.out.println(response.getStatusCode().value());
+			System.out.println(response.getBody());
+		}catch(WebClientException e) {
+			System.out.println("Caught WebClientException calling HTTP service");
+		}catch (Exception e) {
+			System.out.println("Caught Exception calling HTTP service");
+		}
 	}
 }

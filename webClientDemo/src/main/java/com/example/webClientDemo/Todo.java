@@ -8,8 +8,8 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true, makeFinal = true)
 @ToString
 public class Todo {
-    private long userId;
     private long id;
+    private long userId;
     private String title;
     private boolean completed;
 }
