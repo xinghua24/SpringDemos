@@ -14,6 +14,7 @@ import org.springframework.web.reactive.function.client.ExchangeStrategies;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.client.WebClientException;
 
+import java.util.HashMap;
 import java.util.List;
 
 @SpringBootApplication
@@ -30,6 +31,7 @@ public class DemoApplication {
 			webClientGetMono();
 			webClientGetList();
 			webClientGetListBodyOnly();
+			webClientGetListAsHashMap();
 			webClientPost();
 			webClientPut();
 			webClientDelete();
@@ -98,6 +100,20 @@ public class DemoApplication {
 		System.out.println(todos
 				.stream()
 				.toList());
+	}
+
+	private static void webClientGetListAsHashMap() {
+		System.out.println("DemoApplication.webClientGetListAsHashMap");
+		WebClient webClient = WebClient.builder()
+				.build();
+		List<HashMap<String,String>> todos = webClient
+				.get()
+				.uri("https://jsonplaceholder.typicode.com/todos")
+				.accept(MediaType.APPLICATION_JSON)
+				.retrieve()
+				.bodyToMono(List.class)
+				.block();
+		System.out.println(todos);
 	}
 
 	private static void webClientPost() {
