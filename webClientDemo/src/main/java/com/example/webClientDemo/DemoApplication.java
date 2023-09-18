@@ -1,11 +1,16 @@
 package com.example.webClientDemo;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.codec.json.Jackson2JsonDecoder;
+import org.springframework.http.codec.json.Jackson2JsonEncoder;
+import org.springframework.web.reactive.function.client.ExchangeStrategies;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.client.WebClientException;
 
@@ -24,14 +29,17 @@ public class DemoApplication {
 			webClientGet();
 			webClientGetMono();
 			webClientGetList();
+			webClientGetListBodyOnly();
 			webClientPost();
 			webClientPut();
 			webClientDelete();
 			webClient_HandleException();
+			webClientCustomizeObjectMapper();
 		};
 	}
 
 	private static void webClientGet() {
+		System.out.println("DemoApplication.webClientGet");
 		WebClient webClient = WebClient.builder()
 				.build();
 		ResponseEntity<Todo> response = webClient
@@ -46,6 +54,7 @@ public class DemoApplication {
 	}
 
 	private static void webClientGetMono() {
+		System.out.println("DemoApplication.webClientGetMono");
 		WebClient webClient = WebClient.builder()
 				.build();
 		Todo todo = webClient
@@ -59,6 +68,7 @@ public class DemoApplication {
 	}
 
 	private static void webClientGetList() {
+		System.out.println("DemoApplication.webClientGetList");
 		WebClient webClient = WebClient.builder()
 				.build();
 		ResponseEntity<List<Todo>> response = webClient
@@ -74,10 +84,27 @@ public class DemoApplication {
 						.findFirst().get().getUserId());
 	}
 
-	private static void webClientPost() {
+	private static void webClientGetListBodyOnly() {
+		System.out.println("DemoApplication.webClientGetListBodyOnly");
 		WebClient webClient = WebClient.builder()
 				.build();
-		Todo newTodo = new Todo().setId(1).setUserId(2).setTitle("Laundry").setCompleted(false);
+		List<Todo> todos = webClient
+				.get()
+				.uri("https://jsonplaceholder.typicode.com/todos")
+				.accept(MediaType.APPLICATION_JSON)
+				.retrieve()
+				.bodyToMono(List.class)
+				.block();
+		System.out.println(todos
+				.stream()
+				.toList());
+	}
+
+	private static void webClientPost() {
+		System.out.println("DemoApplication.webClientPost");
+		WebClient webClient = WebClient.builder()
+				.build();
+		Todo newTodo = new Todo().setId(1).setUserId(2).setTitle("Laundry");
 		ResponseEntity<Todo> response = webClient
 				.post()
 				.uri("https://jsonplaceholder.typicode.com/posts")
@@ -92,9 +119,10 @@ public class DemoApplication {
 	}
 
 	private static void webClientPut() {
+		System.out.println("DemoApplication.webClientPut");
 		WebClient webClient = WebClient.builder()
 				.build();
-		Todo updatedPost = new Todo().setId(1).setUserId(2).setTitle("Laundry").setCompleted(false);
+		Todo updatedPost = new Todo().setId(1).setUserId(2).setTitle("Laundry");
 		ResponseEntity<Todo> response = webClient
 				.put()
 				.uri("https://jsonplaceholder.typicode.com/posts/1")
@@ -109,9 +137,10 @@ public class DemoApplication {
 	}
 
 	private static void webClientDelete() {
+		System.out.println("DemoApplication.webClientDelete");
 		WebClient webClient = WebClient.builder()
 				.build();
-		Todo updatedPost = new Todo().setId(1).setUserId(2).setTitle("Laundry").setCompleted(false);
+		Todo updatedPost = new Todo().setId(1).setUserId(2).setTitle("Laundry");
 		ResponseEntity<Void> response = webClient
 				.delete()
 				.uri("https://jsonplaceholder.typicode.com/posts/1")
@@ -123,6 +152,7 @@ public class DemoApplication {
 	}
 
 	private static void webClient_HandleException() {
+		System.out.println("DemoApplication.webClient_HandleException");
 		WebClient webClient = WebClient.builder()
 				.build();
 		try {
@@ -140,5 +170,29 @@ public class DemoApplication {
 		}catch (Exception e) {
 			System.out.println("Caught Exception calling HTTP service");
 		}
+	}
+
+	// see https://stackoverflow.com/questions/43769301/how-to-customize-springwebflux-webclient-json-deserialization
+	private static void webClientCustomizeObjectMapper() {
+		System.out.println("DemoApplication.webClientCustomizeObjectMapper");
+		ExchangeStrategies strategies = ExchangeStrategies.builder()
+				.codecs(clientDefaultCodecsConfigurer -> {
+					ObjectMapper mapper = new ObjectMapper();
+					mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, true);
+					clientDefaultCodecsConfigurer.defaultCodecs().jackson2JsonEncoder(new Jackson2JsonEncoder(mapper, MediaType.APPLICATION_JSON));
+					clientDefaultCodecsConfigurer.defaultCodecs().jackson2JsonDecoder(new Jackson2JsonDecoder(mapper, MediaType.APPLICATION_JSON));
+				}).build();
+		WebClient webClient = WebClient.builder()
+				.exchangeStrategies(strategies)
+				.build();
+		List<Todo> response = webClient
+				.get()
+				.uri("https://jsonplaceholder.typicode.com/todos")
+				.accept(MediaType.APPLICATION_JSON)
+				.retrieve()
+				.bodyToFlux(Todo.class)
+				.collectList()
+				.block();
+		System.out.println(response);
 	}
 }
