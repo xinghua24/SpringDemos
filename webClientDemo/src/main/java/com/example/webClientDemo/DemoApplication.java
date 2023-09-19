@@ -6,10 +6,12 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.codec.json.Jackson2JsonDecoder;
 import org.springframework.http.codec.json.Jackson2JsonEncoder;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.reactive.function.client.ExchangeStrategies;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.client.WebClientException;
@@ -28,19 +30,20 @@ public class DemoApplication {
 	public CommandLineRunner run() {
 		return (args) -> {
 			webClientGet();
-			webClientGetMono();
+			webClientGet_bodyToMono();
 			webClientGetList();
 			webClientGetListBodyOnly();
 			webClientGetListAsHashMap();
 			webClientPost();
 			webClientPut();
 			webClientDelete();
+			webClientHeaders();
 			webClient_HandleException();
 			webClientCustomizeObjectMapper();
 		};
 	}
 
-	private static void webClientGet() {
+	public static void webClientGet() {
 		System.out.println("DemoApplication.webClientGet");
 		WebClient webClient = WebClient.builder()
 				.build();
@@ -55,8 +58,8 @@ public class DemoApplication {
 		System.out.println(response.getBody());
 	}
 
-	private static void webClientGetMono() {
-		System.out.println("DemoApplication.webClientGetMono");
+	public static void webClientGet_bodyToMono() {
+		System.out.println("DemoApplication.webClientGet_bodyToMono");
 		WebClient webClient = WebClient.builder()
 				.build();
 		Todo todo = webClient
@@ -69,7 +72,7 @@ public class DemoApplication {
 		System.out.println(todo);
 	}
 
-	private static void webClientGetList() {
+	public static void webClientGetList() {
 		System.out.println("DemoApplication.webClientGetList");
 		WebClient webClient = WebClient.builder()
 				.build();
@@ -86,7 +89,7 @@ public class DemoApplication {
 						.findFirst().get().getUserId());
 	}
 
-	private static void webClientGetListBodyOnly() {
+	public static void webClientGetListBodyOnly() {
 		System.out.println("DemoApplication.webClientGetListBodyOnly");
 		WebClient webClient = WebClient.builder()
 				.build();
@@ -102,7 +105,7 @@ public class DemoApplication {
 				.toList());
 	}
 
-	private static void webClientGetListAsHashMap() {
+	public static void webClientGetListAsHashMap() {
 		System.out.println("DemoApplication.webClientGetListAsHashMap");
 		WebClient webClient = WebClient.builder()
 				.build();
@@ -116,7 +119,7 @@ public class DemoApplication {
 		System.out.println(todos);
 	}
 
-	private static void webClientPost() {
+	public static void webClientPost() {
 		System.out.println("DemoApplication.webClientPost");
 		WebClient webClient = WebClient.builder()
 				.build();
@@ -134,7 +137,7 @@ public class DemoApplication {
 		System.out.println(response.getBody());
 	}
 
-	private static void webClientPut() {
+	public static void webClientPut() {
 		System.out.println("DemoApplication.webClientPut");
 		WebClient webClient = WebClient.builder()
 				.build();
@@ -152,7 +155,7 @@ public class DemoApplication {
 		System.out.println(response.getBody());
 	}
 
-	private static void webClientDelete() {
+	public static void webClientDelete() {
 		System.out.println("DemoApplication.webClientDelete");
 		WebClient webClient = WebClient.builder()
 				.build();
@@ -167,7 +170,26 @@ public class DemoApplication {
 		System.out.println(response.getStatusCode().value());
 	}
 
-	private static void webClient_HandleException() {
+	public static void webClientHeaders() {
+		System.out.println("DemoApplication.webClientHeaders");
+		WebClient webClient = WebClient.builder()
+				.build();
+		MultiValueMap<String,String> headers = new HttpHeaders();
+		headers.add("header1", "header1 value");
+		headers.add("header2", "header2 value");
+		Todo todo = webClient
+				.get()
+				.uri("https://jsonplaceholder.typicode.com/todos/2")
+				.accept(MediaType.APPLICATION_JSON)
+				.header("header1", "header1 value")
+				.headers(h -> h.addAll(headers))
+				.retrieve()
+				.bodyToMono(Todo.class)
+				.block();
+		System.out.println(todo);
+	}
+
+	public static void webClient_HandleException() {
 		System.out.println("DemoApplication.webClient_HandleException");
 		WebClient webClient = WebClient.builder()
 				.build();
@@ -189,7 +211,7 @@ public class DemoApplication {
 	}
 
 	// see https://stackoverflow.com/questions/43769301/how-to-customize-springwebflux-webclient-json-deserialization
-	private static void webClientCustomizeObjectMapper() {
+	public static void webClientCustomizeObjectMapper() {
 		System.out.println("DemoApplication.webClientCustomizeObjectMapper");
 		ExchangeStrategies strategies = ExchangeStrategies.builder()
 				.codecs(clientDefaultCodecsConfigurer -> {
