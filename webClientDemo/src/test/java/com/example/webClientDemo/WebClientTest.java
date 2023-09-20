@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
 import org.junit.jupiter.api.*;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
 
 import java.io.IOException;
@@ -49,23 +50,23 @@ public class WebClientTest {
 
         todo = service.webClientGet(url);
         Assertions.assertEquals("Homework", todo.getTitle());
-
     }
 
     @Test
     void testGetException() throws JsonProcessingException {
-        Todo mockTodo = new Todo()
-                .setId(1)
-                .setUserId(2)
-                .setTitle("Laundry");
-
         mockBackEnd.enqueue(new MockResponse()
-                .setResponseCode(500)
+                .setResponseCode(HttpStatus.BAD_REQUEST.value())
                 .setBody("error message")
                 .addHeader("Content-Type", "application/json"));
 
         TodoService service = new TodoService();
-        WebClientResponseException webClientResponseException = Assertions.assertThrows(WebClientResponseException.class, () -> service.webClientGet(url));
+
+        WebClientResponseException webClientResponseException = Assertions.assertThrows(
+                WebClientResponseException.class, () -> service.webClientGet(url)
+        );
+
+        Assertions.assertTrue( webClientResponseException.getStatusCode().is4xxClientError());
+        Assertions.assertEquals(HttpStatus.BAD_REQUEST.value(), webClientResponseException.getStatusCode().value());
         Assertions.assertEquals("error message", webClientResponseException.getResponseBodyAsString());
 
     }
